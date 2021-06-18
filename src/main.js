@@ -7,7 +7,7 @@ import { es } from '@braid/vue-formulate-i18n'
 import './css/materialize.css'
 import './css/style.css'
 import 'jquery'
-import './js/materialize.js'
+
 Vue.use(VueFormulate,  {
   plugins: [ es ],
   locale: 'es'
