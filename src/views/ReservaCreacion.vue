@@ -82,7 +82,7 @@
 </template>
 
 <style lang="scss">
-@import '@braid/vue-formulate/themes/snow/snow.scss';
+@import '../css/snow/snow.scss';
 .align-left{
     text-align: left;
 
@@ -93,6 +93,7 @@
 .label-special{
     position: static !important;
 }
+
 </style>
 
 <script>
