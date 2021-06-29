@@ -16,6 +16,7 @@
                                             <FormulateInput
                                                 id="identificador"
                                                 type="text"
+                                                name="ID"
                                                 validation="required|number"
                                                 placeholder="Ingrese el ID de la reserva"
 
