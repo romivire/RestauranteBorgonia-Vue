@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Restaurante La Borgonia</h5>
-          <p class="grey-text text-lighten-4">Nos encontramos en el kilomtro 580 de la Ruta Nacional 33, ubicado en la ciudad de Mendoza. Te esperamos!</p>
+          <p class="grey-text text-lighten-4">Nos encontramos en el kilómetro 580 de la Ruta Nacional 33, ubicado en la ciudad de Mendoza. Te esperamos!</p>
 
 
         </div>
@@ -12,7 +12,7 @@
           <h5 class="white-text">Contacto</h5>
           <ul>
             <li><a class="white-text">Email: laBorgonia@gmail.com</a></li>
-            <li><a class="white-text">Telefono: 2913584785</a></li>
+            <li><a class="white-text">Teléfono: 2913584785</a></li>
           </ul>
         </div>
         <div class="col l3 s12">

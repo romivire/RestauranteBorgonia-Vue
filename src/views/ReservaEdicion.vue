@@ -87,6 +87,7 @@
                                     <div class="input-field col s12">
                                         <label class="label-special">Fecha</label>
                                             <FormulateInput
+                                                name="Fecha"
                                                 type="date"
                                                 id="fechaModificada"
                                                 validation="required|after"
@@ -99,7 +100,7 @@
                                         <label class="label-special">Hora</label>
                                         <!-- v-model="value" -->
                                             <FormulateInput
-                                            
+                                                name="Hora"
                                                 :options="{'20:00': '20:00', '20:30': '20:30', '21:00': '21:00','21:30': '21:30'}"
                                                 type="select"
                                                 placeholder="Seleccione una hora"
@@ -128,6 +129,7 @@
                                         <FormulateInput
                                         type="textarea"
                                         id="observacionModificada"
+                                        name="Observacion"
                                         placeholder="Indica tu observacion para la reserva"
                                         help="Longitud maxima 100 caracteres"
                                         validation="max:100,length"

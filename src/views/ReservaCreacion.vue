@@ -14,6 +14,7 @@
                                         <label class="label-special">Fecha</label>
                                             <FormulateInput
                                                 type="date"
+                                                name="Fecha"
                                                 id="fechaIngresada"
                                                 validation="required|after"
                                             />
@@ -26,6 +27,7 @@
                                             <FormulateInput
                                                 :options="{'20:00': '20:00', '20:30': '20:30', '21:00': '21:00','21:30': '21:30'}"
                                                 type="select"
+                                                name="Hora"
                                                 placeholder="Seleccione una hora"
                                                 id="horaIngresada"
                                                 validation="required"
@@ -38,6 +40,7 @@
                                         <label class="label-special">Cantidad de personas</label>
                                             <FormulateInput
                                                 id="cantidadIngresada"
+                                                name="Cantidad de personas"
                                                 placeholder="Cantidad de personas"
                                                 validation="required|number|max:50"
                                             />
@@ -49,6 +52,7 @@
                                         <label class="label-special">Observacion</label>
                                         <FormulateInput
                                         type="textarea"
+                                        name="Observacion"
                                         id="observacionIngresada"
                                         placeholder="Indica tu observacion para la reserva"
                                         help="Longitud maxima 100 caracteres"
