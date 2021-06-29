@@ -1,13 +1,9 @@
 <template>
   <div id="app">
-    <NavigationMobile />
+    
     <div class="content" :class="{'open':showNav}">
       <div class="top-bar">
-        <div id="navigation-icon" v-if="mobileView"
-          @click="showNav = !showNav">
-          <i class="fas fa-bars"></i>
-        </div>
-        <Navigation v-if="!mobileView" />
+        <Navigation />
       </div>
       <router-view />
       <Footer />
@@ -18,7 +14,7 @@
 
 <script>
 import Navigation from "./components/Navigation.vue";
-import NavigationMobile from "./components/NavigationMobile.vue";
+import M from 'materialize-css'
 import Footer from "./components/Footer.vue";
 
 export default {
@@ -35,13 +31,15 @@ export default {
   },
   components: {
     Navigation,
-    NavigationMobile,
     Footer
   },
   created() {
     this.handleView();
     window.addEventListener('resize', this.handleView);
-  }
+  },
+  mounted () {
+    M.AutoInit()
+  },
 };
 </script>
 
