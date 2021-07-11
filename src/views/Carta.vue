@@ -2,69 +2,87 @@
 <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
     <div>
         <div class="container">
-        
-                <div class="row">
-                    <div class="col s12 center card-panel">
-                        
+			<div class="row">
+                <div class="col s12 center card-panel">
                             <div class="col s12">
                                 <h3 class="light">Carta del Restaurante</h3>    
                             </div>
-                            <div class="filters">
-                                <span class="filter" v-bind:class="{ active: currentFilter === 'ALL' }" v-on:click="setFilter('ALL')">ALL
+                            <div class="filters" v-show="showFilters">
+                                <span class="filter" v-bind:class="{ active: currentFilter === 'ALL' }" v-on:click="setFilter('ALL')">TODOS
 
                                 </span>
-                                <span class="filter" v-bind:class="{ active: currentFilter === 'VEGETARIANO' }" v-on:click="setFilter('VEGETARIANO')">VEGETARIANO
+                                <span class="filter" v-bind:class="{ active: currentFilter === 'Si' }" v-on:click="setFilter('Si')">VEGETARIANO
 
                                 </span>
-                                <span class="filter" v-bind:class="{ active: currentFilter === 'NOVEGETARIANO' }" v-on:click="setFilter('NOVEGETARIANO')">NO VEGETARIANO
+                                <span class="filter" v-bind:class="{ active: currentFilter === 'No' }" v-on:click="setFilter('No')">NO VEGETARIANO
+
+                                </span>
+								<span class="filter" v-bind:class="{ active: currentFilter === 'Pasta' }" v-on:click="setFilter('Pasta')">PASTA
+
+                                </span>
+                                <span class="filter" v-bind:class="{ active: currentFilter === 'Carne' }" v-on:click="setFilter('Carne')">CARNE
+
+                                </span>
+                                <span class="filter" v-bind:class="{ active: currentFilter === 'Ensalada' }" v-on:click="setFilter('Ensalada')">ENSALADA
+
+                                </span>
+								<span class="filter" v-bind:class="{ active: currentFilter === 'Postre' }" v-on:click="setFilter('Postre')">POSTRE
 
                                 </span>
                             </div>
-                            <transition-group class="projects" name="projects" >
-		
-        <div class="card col l3 col-special" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
-			<div class="project-image-wrapper">
-                
-                <div class="card-image">
-                                    <img class="project-image" v-bind:src="project.image">
-                </div>
-                <div class="card-content">
-                                    <span class="card-title light">{{project.title}}</span>
-                                    <p class="text-card">Categoria: Carne </p>
-                                    <p class="text-card">Vegetariano: Si </p>
-                                    </div>
-                                    <div class="card-action text-card">
-                                     <span class="text-card">$ </span>
-                                    </div>
-				<div class="gradient-overlay"></div>
+							<loading v-bind:load="load"></loading>
+							
+                            
 
-			</div>
-		</div>
-	</transition-group>
+							<div class="row" >
+									<transition-group class="platos" name="slide-fade" >
+										<div
+										class="card col l3 plato" 
+										v-if="currentFilter === plato.vegetariano || currentFilter === plato.categoria_plato || currentFilter === 'ALL'"
+										v-bind:key="plato.nombre" 
+										v-for="plato in platos"
+										v-show="show"
+										>
+											<div class="">
+												<card-plato
+													v-bind:plato="plato"
+													v-on:update-current-plato="showTablePlato"
+												></card-plato>
+											</div>
+										</div>
+									</transition-group>
+									<transition name="slide-fade-table">
+										<div v-if="showTable">
+											<table-plato v-bind:plato="selectedPlato"></table-plato>
+										</div>
+									</transition>
+									
+									<back-button v-on:show-cards="showCards()" v-show="showTable"></back-button>
+							</div>
+								
+							
                 </div>
-            </div>
+			</div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+.plato-image-wrapper {
+	position:relative;
+}
 .col-special{
-    margin-left: 0px !important;
+    margin-left: auto !important;
 }
 .card{
     
-    transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out;
 
 	box-shadow:0px 2px 8px lightgrey;
-    margin: 1rem;
+    margin: 1rem !important;
 	flex-direction:column;
 	align-items:center;
 
-}
-
-.text-card{
-    font-size: 1.3rem !important;
-    text-align: left;
 }
 .filter {
 	
@@ -81,87 +99,109 @@
 .filter:hover {
 	background:lightgray;
 } 
-.projects {
-	margin-bottom:50px;
+.platos {
+	margin-bottom:25px;
 	margin-top:25px;
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:center;
 }
 
-.projects-enter {
-	transform: scale(0.5) translatey(-80px);
-	opacity:0;
+.slide-fade-enter-active {
+    transition: all 0.4s ease;
+    transition-delay: 0.4s;
+}
+.slide-fade-leave-active {
+    transition: all 0.4s cubic-bezier(1, 0.8, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+    transform: translateX(0px);
+    opacity: 0;
+}
+.slide-fade-table-enter-active {
+    transition: all 0.4s ease;
+    transition-delay: 0.3s;
+}
+.slide-fade-table-enter {
+    transform: translateX(200px);
+    opacity: 0;
 }
 
-.projects-leave-to{
-	transform: translatey(30px);
-	opacity:0;
-}
-
-.projects-leave-active {
-	position: absolute;
-	z-index:-1;
-}
-
-
-.project {
-	transition: all .35s ease-in-out;
-	margin:10px;
+.plato {
+	
+	
 	box-shadow:0px 2px 8px lightgrey;
 	border-radius:3px;
-	width:180px;
-	height:200px;
-	display:flex;
+	
+	height:auto;
+	display:table;
 	flex-direction:column;
 	align-items:center;
 }
-
-.project-image-wrapper {
-	position:relative;
-}
-
-.gradient-overlay {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:150px;
-	opacity:0.09;
-	background: 
-		linear-gradient(to bottom, rgba(0,210,247,0.65) 0%,rgba(0,210,247,0.64) 1%,rgba(0,0,0,0) 100%), 
-		linear-gradient(to top, rgba(247,0,156,0.65) 0%,rgba(247,0,156,0.64) 1%,rgba(0,0,0,0) 100%);
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-	border-top-left-radius:3px;
-	border-top-right-radius:3px;
-}
-
-
-
 </style>
 
 <script>
+import axios from "axios";
+import BackButton from "../components/BackButton.vue";
+import TablePlato from "../components/TablePlato.vue";
+import CardPlato from "../components/CardPlato.vue";
+import Loading from "../components/Loading.vue";
+
 export default {
+	components: {
+        TablePlato,
+        CardPlato,
+		BackButton,
+		Loading,
+	},
     data() {
         return{
+		load:false,
+		platos: [],
 		currentFilter: 'ALL',
-		projects: [
-			{title: "Ensalada de papa y huevo", image: "https://picsum.photos/g/200?image=116", category: 'VEGETARIANO'},
-            {title: "Charcoal DSDSDS", image: "https://picsum.photos/g/200?image=116", category: 'NOVEGETARIANO'},
-			{title: "Charcoal", image: "https://picsum.photos/g/200?image=116", category: 'NOVEGETARIANO'},
-			{title: "Sketching", image: "https://picsum.photos/g/200?image=121", category: 'VEGETARIANO'},
-			{title: "Acrillic", image: "https://picsum.photos/g/200?image=133", category: 'NOVEGETARIANO'},
-			{title: "Pencil", image: "https://picsum.photos/g/200?image=134", category: 'VEGETARIANO'},
-			{title: "Pen", image: "https://picsum.photos/g/200?image=115", category: 'VEGETARIANO'},
-			{title: "Inking", image: "https://picsum.photos/g/200", category: 'VEGETARIANO'},
-		]
+		show: true,
+        showTable: false,
+        selectedPlato: null,
+		showFilters:true,
         }
 	},
 	methods: {
+		getPlatos(){
+			this.load = true;
+			axios
+                .get('https://romivire-servicioweb.herokuapp.com/platos')
+                .then((response) => {
+					this.load = false;
+                    this.platos = response.data;
+					
+                })
+                .catch((e) => console.log('Error'+e));
+		},
 		setFilter: function(filter) {
 			this.currentFilter = filter;
+		},
+		showTablePlato(data) {
+			
+			this.show = false;
+            
+			this.showFilters= false;
+			this.selectedPlato = data;
+			
+            this.showTable = true;
+			window.scrollTo(0, 0);
+				
+        },
+		
+		showCards() {
+            this.show = true;
+            this.showTable = false;
+			this.showFilters=true;
+        },
+	},
+	
+		mounted() {
+			this.getPlatos();
 		}
-	}
+	
 }
 </script>

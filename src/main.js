@@ -4,9 +4,10 @@ import router from "./router";
 import VueFormulate from '@braid/vue-formulate'
 import { es } from '@braid/vue-formulate-i18n'
 
-import './css/materialize.css'
+import 'materialize-css/dist/css/materialize.min.css'
+
 import './css/style.css'
-import 'jquery'
+
 
 Vue.use(VueFormulate,  {
   plugins: [ es ],

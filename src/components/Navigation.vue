@@ -1,55 +1,70 @@
 <template>
   <div id="navigation">
-    <a id="logo-container" href="#" class="brand-logo">La Borgonia</a>
-    <ul class="nav navbar-nav">
-      <li><router-link class="link-navbar router-link-active" to="/">Home</router-link></li>
+   <nav id=navContainer>
+    <div class="nav-wrapper nav-style">
+      <a href="#!" class="brand-logo">La Borgonia</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><router-link class="link-navbar router-link-active" to="/">Home</router-link></li>
       <li><router-link class="link-navbar" active-class="active" to="carta">Carta</router-link></li>
       <li><router-link class="link-navbar" active-class="active" to="reservaCreate">Reservar</router-link></li>
       <li><router-link class="link-navbar" active-class="active" to="reservaEdit">Cambiar reserva</router-link></li>
-    </ul>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="carta">Carta</router-link></li>
+      <li><router-link to="reservaCreate">Reservar</router-link></li>
+      <li><router-link to="reservaEdit">Cambiar reserva</router-link></li>
+  </ul>
+
   </div>
+
 </template>
 
+
+
 <script>
-export default {};
+import $ from 'jquery'
+export default {
+  mounted(){
+    $(document).ready(function(){
+    $('.sidenav');
+  });
+  }
+  
+};
 </script>
 
 <style lang="scss" scoped>
-.router-link-exact-active{
+.nav-style{
   background: linear-gradient(rgba(165, 68, 68, 0.354), rgba(142, 63, 63, 0.721));
+}
+.router-link-exact-active{
+  background: linear-gradient(rgba(189, 129, 129, 0.721), rgba(189, 129, 129, 0.721));
   }
 .link-navbar {
       width: max-content;
       font-size: 1.5rem;
       padding: 23px 10px;
       cursor: pointer;
-      color:black;
+      color:white;
 }
-#logo-container{
-     width: 100%;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-  color:black;
+.brand-logo{
+  vertical-align: text-top;
+  color:white;
+  font-size: 1.7rem;
+  margin-top: 1%;
+  margin-left: 1%;
 }
 #navigation {
-  display: flex;
   width: 100%;
-  
-  ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0 20px 0 0;
-    li {
-      width: max-content;
-      font-size: 1.5rem;
-      padding: 2px 10px;
-      cursor: pointer;
-      &:hover {
-        color: #7ca971;
-      }
-    }
-  }
-  
+}
+#navContainer{
+  height: 100%;
+
+  background-color: #7a1313;;
 }
 </style>

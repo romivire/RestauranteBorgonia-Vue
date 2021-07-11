@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row center">
           <h3 class="header col s12 light">La Borgonia</h3>  
-          <h5 class="header col s12">Lo invitamos a disfrutar de una experiencia gastronomica</h5>
+          <h5 class="header col s12">Lo invitamos a disfrutar de una experiencia gastronómica</h5>
         </div>
       </div>
     </div>
@@ -20,9 +20,9 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Experencia en la atencion</h5>
+            <h5 class="center">Experencia en la atención</h5>
 
-            <p class="light landing-text">Contamos con mas de 40 anos de experiencia en el rubro, lo cual nos permite lograr la mejor y mas rapida atencion para cada uno de nuestros clientes</p>
+            <p class="light landing-text">Contamos con más de 40 años de experiencia en el rubro, lo cual nos permite lograr la mejor y más rápida atención para cada uno de nuestros clientes</p>
           </div>
         </div>
 
@@ -31,7 +31,7 @@
             <h2 class="center brown-text"><i class="material-icons">group</i></h2>
             <h5 class="center">Enfocados en el cliente</h5>
 
-            <p class="light landing-text">Nuestro mayor objetivo es lograr que todos nuestros clientes puedan tener una experiencia gastronomica inolvidable desde el momento que ingresan al lugar. Trabajamos todos los dias para superarnos y lograr un lugar unico</p>
+            <p class="light landing-text">Nuestro mayor objetivo es lograr que todos nuestros clientes puedan tener una experiencia gastronómica inolvidable desde el momento que ingresan al lugar. Trabajamos todos los días para superarnos y lograr un lugar único</p>
           </div>
         </div>
 
@@ -40,7 +40,7 @@
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
             <h5 class="center">Trabajo en equipo</h5>
 
-            <p class="light landing-text">Estamos convencidos de que los mejores resultados se logran en equipo. Es por esto que contamos con un completo y experimentado equipo que se supera dia a dia para llevar los mejores platos a la mesa de cada cliente.</p>
+            <p class="light landing-text">Estamos convencidos de que los mejores resultados se logran en equipo. Es por esto que contamos con un completo y experimentado equipo que se supera día a día para llevar los mejores platos a la mesa de cada cliente.</p>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
     <div class="section no-pad-bot backgroundShadow">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12">Un lugar para que disfrutes de la naturaleza y la gastronomia</h5>
+          <h5 class="header col s12">Un lugar para que disfrutes de la naturaleza y la gastronomía</h5>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@
         <div class="col s12 center">
           <h3><i class="mdi-content-send"></i></h3>
           <h4>Nuestra Historia</h4>
-          <p class="left-align light landing-text">En el ano 1980 en la ciudad de Mendoza, Carlos Borgnia decidio emprender el sueno que mas anhelaba: dar a conocer sus creaciones gastronomicas. Con el paso del tiempo se armo una gran familia que mantiene vivo el sueno de Carlos y ofrece a cada uno de sus clientes una gran variedad gastronomica asi como tambien un agradable espacio rodeado de naturaleza. Veni a conocernos.</p>
+          <p class="left-align light landing-text">En el año 1980 en la ciudad de Mendoza, Carlos Borgnia decidió emprender el sueño que más anhelaba: dar a conocer sus creaciones gastronómicas. Con el paso del tiempo se armó una gran familia que mantiene vivo el sueño de Carlos y ofrece a cada uno de sus clientes una gran variedad gastronómica así como también un agradable espacio rodeado de naturaleza. Vení a conocernos.</p>
         </div>
       </div>
 
@@ -78,7 +78,7 @@
     <div class="section no-pad-bot backgroundShadow">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12">Variedad gastronomica y calidad asegurada en cada uno de nuestros platos</h5>
+          <h5 class="header col s12">Variedad gastronómica y calidad asegurada en cada uno de nuestros platos</h5>
         </div>
       </div>
     </div>
