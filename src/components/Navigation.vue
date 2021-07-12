@@ -14,10 +14,10 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="carta">Carta</router-link></li>
-      <li><router-link to="reservaCreate">Reservar</router-link></li>
-      <li><router-link to="reservaEdit">Cambiar reserva</router-link></li>
+      <li><a href="https://proyecto-js-romivire.herokuapp.com/">Home</a></li>
+      <li><a href="https://proyecto-js-romivire.herokuapp.com/carta">Carta</a></li>
+      <li><a href="https://proyecto-js-romivire.herokuapp.com/reservaCreate">Reservar</a></li>
+      <li><a href="https://proyecto-js-romivire.herokuapp.com/reservaEdit">Cambiar reserva</a></li>
   </ul>
 
   </div>
@@ -29,10 +29,13 @@
 <script>
 import $ from 'jquery'
 export default {
-  mounted(){
+  created(){
     $(document).ready(function(){
     $('.sidenav');
   });
+  },
+  hideSideNav(){
+     document.getElementById('mobile-demo').style.visibility='hidden';
   }
   
 };
