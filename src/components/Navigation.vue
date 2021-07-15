@@ -2,7 +2,7 @@
   <div id="navigation">
    <nav id=navContainer>
     <div class="nav-wrapper nav-style">
-      <a href="#!" class="brand-logo">La Borgonia</a>
+      <a href="https://proyecto-js-romivire.herokuapp.com/" class="brand-logo">La Borgonia</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><router-link class="link-navbar router-link-active" to="/">Home</router-link></li>
